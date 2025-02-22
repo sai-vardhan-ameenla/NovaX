@@ -1,0 +1,317 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Body Styles */
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('bg.jpg'); /* Use bg.png or bg.jpg */
+    background-size: cover; /* Ensures background covers full screen */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents repetition */
+    color: white;
+    overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+/* Chat Container */
+.chat-container {
+    width: 100%;
+    height: 80%;
+    background-color: rgba(45, 52, 59, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+/* User Chat Box */
+.user-chat-box {
+    width: 60%;
+    position: relative;
+    left: 40%;
+}
+
+/* AI Chat Box */
+.ai-chat-box {
+    width: 60%;
+    position: relative;
+}
+
+/* User Chat Message */
+.user-chat-area {
+    width: 90%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 40px 0px 40px 40px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+/* AI Chat Message */
+.ai-chat-area {
+    width: 90%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    left: 10%;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 0px 40px 40px 40px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* User & AI Images */
+#userImage, #aiImage {
+    position: absolute;
+    filter: drop-shadow(2px 2px 10px black);
+}
+
+#userImage {
+    right: 0;
+}
+
+#aiImage {
+    left: 0;
+}
+
+/* Prompt Input Area */
+.prompt-area {
+    width: 100%;
+    height: 20%;
+    background-color: rgba(45, 52, 59, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+/* Input Field */
+.prompt-area input {
+    width: 50%;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.7);
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Buttons */
+.prompt-area button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.prompt-area button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Loading Animation */
+.load {
+    filter: drop-shadow(2px 2px 10px black);
+}
+
+/* Choose Image */
+.chooseimg {
+    width: 30%;
+    border-radius: 30px;
+}
+
+/* Icons */
+#image img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .user-chat-box {
+        width: 80%;
+        left: 20%;
+    }
+
+    .ai-chat-box {
+        width: 80%;
+    }
+}
+
+/* Voice Assistant Button */
+#voiceAssistant {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #080b35;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#voiceAssistant:hover {
+    background-color: #071c3b;
+}
+
+#voiceAssistant img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Clear Chat Button */
+#clearChat img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Remove Blur Effect */
+body {
+    backdrop-filter: none !important;
+    background-color: transparent !important;
+}
+
+/* Transparent Chat Areas */
+.chat-container, .prompt-area {
+    background-color: transparent !important;
+}
+
+/* Loading GIF */
+#loadingGif {
+    display: none;
+    width: 50px;
+    height: 50px;
+}
+
+/* Align Voice Assistant Button & GIF */
+.voice-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Light Theme */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.chat-container {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+button {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+input, textarea {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.chat-container.dark-theme {
+    background-color: #333;
+    color: #ddd;
+}
+
+button.dark-theme {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+input.dark-theme, textarea.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Button Styling */
+.prompt-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Maths AI Button */
+#mathsAI {
+    background-color: #ff9800;
+    color: white;
+}
+
+/* Clear Chat Button */
+#clearChat {
+    background-color: #f44336;
+    color: white;
+}
+
+/* img gen Button */
+#imgGenerator {
+    background-color: #2885a9;
+    color: white;
+}
+
+/* Voice Assistant Button */
+#voiceAssistant {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* upload imgage Button */
+#image {
+    background-color: #ce9acc;
+    color: white;
+}
+
+/* Submit Button */
+#submit {
+    background-color: #673ab7;
+    color: white;
+}
+
+/* Hover Effects */
+button:hover {
+    opacity: 0.8;
+}
+
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers entire screen */
+    z-index: -1; /* Background me rakhne ke liye */
+}
+
+
